@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <style>
+        #say{
+            width: 300px;
+            margin: 0 auto;
+
+        }
+        #list{
+            width: 300px;
+            margin: 0 auto;
+        }
+        .content{
+            width: 300px;
+            box-shadow: 0 3px 5px #666;
+            margin-top: 10px;
+        }
+        img{
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="say">
+        <textarea name="" id="con" cols="30" rows="10"></textarea>
+        <input type="button" value="发表说说">
+    </div>
+    <div id="list">
+        <!-- 单个盒子div -->
+        <div class="content">
+            <img src="./img/2.jpg" alt="">
+            老六
+            <p>真不错</p>
+        </div>
+    </div>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(":button").click(function(){
+            var say=$("#con").val();
+            $(' <div class="content"><img src="./img/2.jpg" alt=""> 老六<p>'+say+'</p></div>').appendTo("#list");
+            $("#con").val("");
+        })
+    </script>
+</body>
+</html>
