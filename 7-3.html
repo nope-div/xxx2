@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>文本1111</li>
+    </ul>
+    <input type="button" value="删除最后一张图片" id="btn">
+
+
+    <div id="box">
+        <img src="./img/img/1.jpg" alt="">
+    </div>
+
+
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script>
+        //绑定删除最后一张图片
+        $("#btn").click(function(){
+            //移出元素
+            $("#box img:last").remove();
+        })
+
+
+
+
+
+        //内部插入   插入的是【子元素】
+        //插入元素   父级.sppend(标签)
+        $("ul").append("<li>文本222</li>");
+        //注意顺序
+        $("<li>文本222</li>").append("ul");
+        //前置插入 prepend()
+        $("ul").prepend("<h2>嘿嘿</h2>");
+        //注意顺序
+        $("<h2>嘿嘿</h2>").prepend("ul");
+
+        //外部插入元素   插入的是同辈元素
+        $("<h1>我是标提</h1>").insertBefore("ul");
+        //在ul的后面插入一个元素
+        $("<h3>我是H3标提</h3>").insertAfter("ul");
+
+
+        //替换节点   选中标签.replaceWith（替换的标签HTML）；
+        $("ul li:first").replaceWith("<li>被替换文字</li>");
+
+        //点击图片时进行复制
+
+        $("img").click(function(){
+            $(this).clone(true).appendTo("#box");
+        });
+
+
+    </script>
+</body>
+</html>

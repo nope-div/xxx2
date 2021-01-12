@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>
+                <!-- input：type属性+tab键 -->
+                <input type="checkbox" name="allChoices" id="all" onclick="getChoice(this)">全选
+                <input type="checkbox" name="allChoices" id="all" onclick="reverse(this)">反选
+            </th>
+            <th>
+                商品名称
+            </th>
+            <th>
+                价格
+            </th>
+            <th>
+                数量
+            </th>
+            <th>
+                总价
+            </th>
+        </tr>
+        <tr>
+            
+            <td><input type="checkbox" name="choices" id=""></td>
+            <td>iphone 12</td>
+            <td>6666</td>
+            <td>1</td>
+            <td>6666</td>
+        </tr>
+        <tr>
+            
+            <td><input type="checkbox" name="choices" id=""></td>
+            <td>iphone 12</td>
+            <td>6666</td>
+            <td>1</td>
+            <td>6666</td>
+        </tr>
+    </table>
+    <script>
+        function getChoice(obj)
+        {
+            //接收全部按钮的选项值是不是选中的
+            var val=obj.checked;
+            //获取相同name值的标签回来=》它获取到的是【多个标签】，存在数组里
+            var checkboxs=document.getElementsByName("choices");
+            for(var i=0;i<checkboxs.length;i++){
+                // 获取到的是相同name值的标签，通过【数组下标获取到它】
+                checkboxs[i].checked=val;
+            }
+        }
+        function reverse(obj){
+            var check=document.getElementsByName("choices");
+            for(var i=0;i<check.length;i++){
+                if(check[i].checked){
+                    check[i].checked=false;
+                }else{
+                    check[i].checked=true;
+                }
+            }
+        }
+    </script>
+    <!-- <h1>哈哈哈 <span id="txt">这是一个标题</span>  内容</h1>
+    <script>
+        //获取到id名称的标签
+        var txt=document.getElementById("txt");
+        //给标签加样式
+        txt.style.color="red";
+        txt.style.fontSize="22px";
+        txt.style.flexWrap="normal";
+        txt.innerText="这个标题被我<b>修改</b>"; -->
+        <!-- // txt.innerHTML="这个标题被我<b>修改</b>"; -->
+    </script>
+</body>
+</html>

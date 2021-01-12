@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: orange;
+
+        }
+        .box:hover{
+            /* 显示边框阴影 */
+            box-shadow: 0 0 5px 5px yellow;
+
+            /* 颜色改变 */
+            background: orchid;
+            /* 使用过渡效果，实现慢慢过去 */
+                /* 1·延迟过度，等多少秒才执行 */
+                /* transition-delay: 600ms; */
+
+                /* 2·持续过渡时间 */
+                /* transition-duration: 1000ms; */
+                /* 3·指定过渡的属性 */
+                /* transition-property: all; */
+
+                /* 4·指定过渡时的速度 */
+                /* transition-timing-function:ease; */
+                /*  */
+                /* 加动画效果 */
+                /* animation：关键帧组名 持续时间 动画速度 延迟时间 播放次数 */
+                /* 如果想要重复播放动画，可以使用infinite 无限的意思 */
+                /* 动画速度：ease kinear 。。。。 */
+                animation: ani-move 1000ms linear 100ms infinite;
+        }
+        @keyframes ani-move{
+            from{
+                background: palegreen;
+                box-shadow: 0 0 5px 5px pink;
+            }
+            to{
+                background: powderblue;
+                box-shadow: 0 0 5px 5px blue;
+            }
+        }
+        /* 百分比动画的使用 */
+        @keyframes animtion-move{
+            0%{
+                background: palegreen;
+               
+            }
+            10%{
+                background: powderblue;
+                box-shadow: 0 0 5px 5px blue;
+            }
+            100%{
+                background: rgb(240, 18, 55);
+               
+            }
+            50%{
+                background: rgb(15, 15, 15);
+               
+            }
+            89%{
+                background: rgb(182, 36, 145);
+               
+            }
+            100%{
+                background: rgb(35, 200, 241);
+               width: 800px;
+               height: 700px;
+               border-radius: 40%;
+               text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">盒子</div>
+</body>
+</html>

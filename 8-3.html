@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航下拉框</title>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #nav ul li {
+            list-style: none;
+            float: left;
+            padding: 10px;
+            width: 120px;
+            text-align: center;
+        }
+        #nav ul li:hover{
+            background: greenyellow;
+        }
+
+        a{
+            text-decoration: none;
+            color: indianred;
+        }
+        #nav ul li ul li{
+            width: 100px;
+        }
+        #nav ul li ul {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="">图书</a>
+            <ul>
+                <li><a href="">图书1</a></li>
+                <li><a href="">图书2</a></li>
+                <li><a href="">图书3</a></li>
+            </ul>
+            </li>
+            <li><a href="">娱乐</a></li>
+            <li><a href="">社会资源</a>
+                <ul>
+                    <li><a href="">图书11</a></li>
+                    <li><a href="">图书22</a></li>
+                    <li><a href="">图书33</a></li>
+                </ul>
+                </li>
+            </li>
+            <li><a href="">管理书籍</a>
+                <ul>
+                    <li><a href="">图书111</a></li>
+                    <li><a href="">图书222</a></li>
+                    <li><a href="">图书333</a></li>
+                </ul>
+                </li></li>
+        </ul>
+    </div>
+    <script>
+        $("#nav ul li").hover(function(){
+            //向下滑动
+            $(this).find("ul").slideDown(1500);
+        },function(){
+            //向上滑动
+            $(this).find("ul").slideUp(800);
+        });
+    </script>
+</body>
+</html>

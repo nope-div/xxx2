@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格布局</title>
+    <style>
+        table{
+            width: 800px;
+            /* 文本居中 */
+            text-align: center;
+            /* 把多条边线合并成一条 */
+            border-collapse: collapse;
+        }
+        tr,td{
+            border: 1px solid orange;
+        }
+        .titleTr{
+            background: orange;
+            color: #ffffff;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 容器盒子 -->
+    <div class="container">
+        <!-- 表格 -->
+        <table border="1" cellspacing="0">
+            <!-- 行 -->
+            <tr class="titleTr">
+                <!-- 单元格 -->
+                <td colspan="4">团购统计</td>
+            </tr>
+            <tr class="contentTr">
+                <!-- 单元格 -->
+                <td>内容</td>
+                <td>单价</td>
+                <td>数量</td>
+                <td>金额</td>
+            </tr>
+            <tr>
+                <!-- 单元格 -->
+                <td>火锅</td>
+                <td>￥88</td>
+                <td>10份</td>
+                <td>￥880.00</td>
+            </tr>
+            <tr>
+                <!-- 单元格 -->
+                <td colspan="2"></td>
+                <td >总计：</td>
+                <td>￥1125.00</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位的使用</title>
+    <style>
+    /* 
+        position:fixed; 固定定位;它参考的是【浏览器的窗口】作为参考系进行定位，它的参考系【不能改】
+
+        position:relative; 相对定位;它参考的是它【所在的位置】作为参考系进行定位，它的参考系也【不能改】
+        position:absolute; 绝对定位;它默认以【浏览器的窗口】作为参考系定位，但是它的【参考系是可以改】。
+        给它的父元素加一个相对定位。
+
+        有四个方向进行定位
+        top  上
+        left 左
+        right 右
+        bottom 下
+
+    */
+
+        .box{
+            width:100px;
+            height: 100px;
+            background:red;
+            position: fixed;
+            bottom:0px;
+            right:0px;
+        }
+        body{
+            height:2000px;
+        }
+        .box2{
+            width:100px;
+            height: 100px;
+            background-color: #ccc;
+        }
+        .box1{
+            width:100px;
+            height: 100px;
+            background-color: blue;
+            /* 相对定位 */
+            position:relative;
+            /* left:10px; */
+            /* top:20px; */
+            /* right:30px;
+            bottom:100px; */
+        }
+        .box4{
+            width:200px;
+            height: 200px;
+            background:#000;
+            margin:0 auto;
+        }
+        .box5{
+            width:200px;
+            height: 200px;
+            background: pink;
+            position:relative;
+            top:20px;
+            right:30px;
+        }
+        .box6{
+            width:300px;
+            height: 300px;
+            background:tomato;
+            position:absolute;
+            left:20px;
+            top:20px;
+        }
+        .box7{
+            width:500px;
+            height:500px;
+            background:turquoise;
+            /* 改它的参考系 */
+            position: relative;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <!-- 固定定位 -->
+    <h1>固定定位：</h1>
+    <div class="box">我是一个盒子</div>
+
+    <h2>相对定位：</h2>
+    <div class="box2">
+        <div class="box1">我是一个盒子2</div>
+    </div>
+    <!-- box4是盒子box5原来所在的位置 -->
+    <div class="box4">
+        <div class="box5">我是一个盒子2</div>
+    </div>
+
+    <h2>绝对定位：</h2>
+    <div class="box7">
+        <div class="box6">绝对定位的盒子</div>
+    </div>
+
+</body>
+</html>

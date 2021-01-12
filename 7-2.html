@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 200px;
+            background: tomato;
+        }
+        .color{
+            color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        hhhhhhhhh
+    </div>
+    <h2>嘿嘿嘿</h2>
+    <input type="button" value="移出样式">
+    用户名：<input type="text" name="" id="">
+    <input type="button" value="获取用户名" id="btn">
+
+    <img src="./img/img/2.jpg" alt="">
+    <script>
+        //属性获取
+        alert($("img").attr("src"));
+
+        //设置属性
+        $("img").attr("alt","图片");
+        //同时设置多个属性
+        $("img").attr({
+            "title":"图片",
+            "width":"200",
+            "height":"300"
+        });
+        // 第四种格式,使用函数获取
+        $("img").attr("src",function(){
+            var imgs=[];
+            imgs[0]="./img/img/2.jpg" ;
+            imgs[1]="./img/img/1.jpg" ;
+            imgs[2]="./img/img/3.jpg" ;
+            //随机取图片路径返回替换
+            var index=Math.ceil(Math.random()*2);//向上取整
+            return imgs[index];
+        });
+        //移出属性
+        $("img").removeAttr("alt");
+        
+
+
+
+
+
+        //演示：通过jquery的方法给它加【样式名】
+        //通过.addCla（“类名1 类名2 ....”）方法给标签加类样式
+        $("#box").addClass("box color");
+
+        $(":button").click(function(){
+            //移出类名： .removeClass("需要删除的类名");
+            $("#box").removeClass("color");
+        });
+        $("h2").click(function(){
+            //加类名和移除名相互切换效果
+            $(this).toggleClass("color");
+        });
+
+
+        // 内容的获取和替换 innerHTML和innerText
+        // jquery=> html() 和text()
+        //1.替换id=“box”里面的内容  html（）里面HTML标签会解析
+        $("#box").html("<h1>这是一个替换内容</h1>");
+        //通过 对象。html（）不传参时，会获取该对象下所有HTML代码包括文本
+        // alert($("#box").html());
+        //2.获取盒子的文本内容，它不会解析HTML标签
+        // alert($("h2").text());
+        $("h2").text("<span>文本内容被替换</span>");
+        //3.通过 .val()；获取表单的值
+        $(":text").val("传值进表单");
+        $("#btn").click(function(){
+            //获取值
+            alert($(":text").val());
+        })
+
+    </script>
+</body>
+</html>

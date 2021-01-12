@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>层次选着器</title>
+</head>
+<body>
+    <div class="box">
+        <a href="#">链接1</a>
+        <a href="#">链接2</a>
+        <a href="#">链接3</a>
+    </div>
+    <div class="box2">
+        <p>111</p>
+        <p>222</p>
+    </div>
+    <h2>哈哈哈</h2>
+    <dl>
+        <dt>321</dt>
+    </dl>
+    <dl>
+        <dt>123</dt>
+    </dl>
+    <dl>
+        <dt>231</dt>
+    </dl>
+    <!-- 属性 过滤选着器 -->
+    爱好：<input type="checkbox" name="" id="" checked>足球
+    <input type="checkbox" name="" id="" checked>篮球
+    <input type="checkbox" name="" id="" >乒乓球
+    <input type="checkbox" name="" id="" checked>羽毛球
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            //属性过滤选择器
+            $(":checked").css({
+                "background":"#ccc"
+            })
+
+
+
+//:表单类型 选中对应的表单进行修饰
+            $(":button").css({
+                "background":"blue"
+            });
+            $(":text").css({
+                "background":"#ccc"
+            });
+
+
+            //后代选择器
+            $(".box a").css({
+                "color" :"red",
+                "font-size":"30px"
+            });
+            //子选择器
+            $(".box2>p").css({
+                "color" :"blue",
+                "font-size":"40px"
+            });
+
+            //相邻选着器
+            $(".box+.box2").css({
+                "width" :"100px",
+                "height":"100px",
+                "background":"green"
+            });
+            //通过。next（）方法获取相邻元素 作用和相邻选择器效果一样
+            $("h2").next("dl").css({
+                "font-weight":"bold"
+            });
+            //同辈选择器
+            $("h2~dl").css({
+                "color":"orange"
+            }); 
+
+           
+        });
+    </script>
+</body>
+</html>

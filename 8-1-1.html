@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伸缩框效果</title>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #list{
+            width: 140px;
+            padding: 10px;
+            border: 1px solid gold;
+        }
+        h3{
+            font-size: 16px;
+            text-align: center;
+        }
+        #list span{
+            font-size: 16px;
+            color: greenyellow;
+        }
+        #list ul li {
+            padding: 10px;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: olivedrab;
+        }
+        a:hover{
+            text-decoration: underline;
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+    <div id="list">
+        <h3>商品服务类<span>收缩</span></h3>
+        <ul>
+            <li><a href="">鞋包配饰</a></li>
+            <li><a href="">鞋包配饰</a></li>
+            <li><a href="">鞋包配饰</a></li>
+            <li><a href="">鞋包配饰</a></li>
+        </ul>
+        <h3>电子产品<span>收缩</span></h3>
+        <ul>
+            <li><a href="">手机</a></li>
+            <li><a href="">手机</a></li>
+            <li><a href="">手机</a></li>
+            <li><a href="">手机</a></li>
+        </ul>
+        <h3>食品分类<span>收缩</span></h3>
+        <ul>
+            <li><a href="">马铃薯</a></li>
+            <li><a href="">马铃薯</a></li>
+            <li><a href="">马铃薯</a></li>
+            <li><a href="">马铃薯</a></li>
+        </ul>
+    </div>
+    <script>
+        $(function(){
+            $("h3").click(function(){
+                //淡入淡出效果
+            //     $(this).next("ul").fadeToggle(1000,function(){
+            //        alert("我裂开了（弹出来了）！");
+            //    });
+                //toggle()切换显示
+                $(this).next("ul").slideToggle(1000,function(){
+                   
+                    alert("我裂开了（弹出来了）！");
+                });
+            //     $(this).next("ul").toggle(1000,function(){
+                   
+            //        alert("我裂开了（弹出来了）！");
+            //    });
+                if($(this).find("span").text()=="收缩"){
+                    $(this).find("span").text("展开");
+                }else{
+                    $(this).find("span").text("收缩");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

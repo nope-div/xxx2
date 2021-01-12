@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery使用</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    
+    <img src="./img/img/1.jpg" alt="" id="img">
+    <input type="button" value="显示图片" id="show">
+    <input type="button" value="隐藏图片" id="hide">
+<!-- jQuery 的文字伸缩-->
+    <style>
+        .color{
+            color: aqua;
+        }
+    </style>
+    <h3>娱乐项目</h3>
+    <ul>
+        <li>鲜花</li>
+        <li>游戏</li>
+        <li>酒店</li>
+        <li>酒吧</li>
+        <li>旅游</li>
+    </ul>
+    <!-- jquery实现图片的显示和隐藏 -->
+    <script>
+      
+        $(function(){
+            //绑定点击事件
+            $("#show").click(function(){
+                //展示这个标签
+                $("#img").show(1000);
+            });
+            $("#hide").click(function(){
+                //展示这个标签
+                $("#img").hide(2000);
+            });
+            // jquer的特点：
+            // 单击<h3>标签时，切换属性值，同时后面的兄弟元素会切换其显示或隐藏状态
+            $("h3").click(function(){
+                //切换类名方法 toggle()切换方法
+                $(this).toggleClass("color").next("ul").toggle(500);
+            });
+        });
+    </script>
+</body>
+</html>

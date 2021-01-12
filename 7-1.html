@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM对象</title>
+</head>
+<body>
+    <div class="box"></div>
+    <h1>稳定态臂展</h1>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script>
+        //js中获取一个元素的格式 
+        var id=document.getElementById("id名称");
+        //下面的选择都是获取多个标签getElements
+        var className=document.getElementsByClassName("里面都是类名");
+        var tagName=document.getElementsByTagName("标签名称");
+        //表单name值获取
+        var name=document.getElementsByName("表单的name值");
+
+        // function $(){
+        //     //JQuery对象底层还是依靠JS的DOM对象操作，它只是一个封装 方法 
+
+        // }
+
+
+        //$（）就是一个JQuery对象
+        //通过$（标签选择）来获取标签
+        //$（）实际就是去访问类里面的方法属性
+        var obj=$("#box");
+
+        $(function(){
+            $("h1").click(function(){
+                this.style.color="red";
+                //$(this)=>整个JQuery对象获取标签（$（“h1”）），加css样式
+                $(this).css({
+                    "color":"red"
+                });
+            });
+
+        });
+
+
+
+    </script>
+</body>
+</html>

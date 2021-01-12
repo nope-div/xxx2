@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" id="table">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>班级</th>
+            <th>操作</th>
+        </tr>
+    </table>
+
+    <form action="http://www.baidu.com">
+        <!-- 输入表单 -->
+    <input type="text" name="" placeholder="输入姓名" id="names" >
+    <input type="text" name="" placeholder="输入年龄" id="age">
+    <select name="" id="sex">
+        <option value="女">女</option>
+        <option value="男">男</option>
+    </select>
+    <input type="text" name="" placeholder="输入班级" id="grade">
+    <!-- type=“button” 说明它只是一个普通按钮，什么作用都没有 -->
+    <!-- type=“submit” 说明它是一个提交按钮，可以提交数据到指定路径 -->
+    <input type="button" value="添加数据" onclick="add()">
+    </form>
+    
+    <script>
+        function add(){
+            var names=document.getElementById("names");
+            var age=document.getElementById("age");
+            var sex=document.getElementById("sex");
+            var grade=document.getElementById("grade");
+
+            //创建一个标签
+            var tr=document.createElement("tr");
+            tr.innerHTML="<td>"+names.value+"</td><td>"+age.value+"</td><td>"+sex.value+"</td><td>"+grade.value+
+            "</td><td><a href='#' onclick='del(this)'>删除</a></td>";
+            //指定位置让它出现
+            var table=document.getElementById("table");
+            //在表格中追加子元素    
+            table.appendChild(tr);
+            //清除表单输入的值
+            names.value="";
+            age.value="";
+            grade.value="";
+        }
+        //删除表格
+        function del(obj){
+            //提示是否删除，点击确定再执行
+            if(confirm("是否删除该行？"))
+            {
+                document.getElementById("table").removeChild(obj.parentNode.parentNode);
+            }
+           
+        }
+    </script>
+</body>
+</html>

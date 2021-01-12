@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window对象</title>
+</head>
+<body>
+    
+    <script>
+        // 1、alert()弹出警示框
+        var user = "张三";
+        //window这个对象可以省略
+        // window.alert("xxx"+user);
+
+        //2、弹出提示对话框
+        // var users = window.prompt("请输入您的名字：");
+        // alert("您的名字是："+users);
+
+        //3、确认对话框（这个用得最多！！）
+        // var flag = window.confirm("您是否需要删除该选项？"); //点击确定时返回true，点击取消返回的是false
+        // if(flag)
+        // {
+        //     //点击确定执行这里
+        //     alert("您点击了确定！");
+        // }
+        // else
+        // {
+        //     //点击取消执行这里
+        //     alert("您点击了取消！");
+        // }
+        
+        //4、打开一个新的窗口 window.open()
+        // window.open("window.html","网页标题名称","width=300,height=400");
+
+        function show()
+        {
+            // window.open("onchange.html","onchange","width=300,height=400");
+            alert("间隔2S执行我！");
+        }
+
+        //5、setTimeout() 指定【间隔时间】之后执行某部分代码
+        // setTimeout("show()",2000);
+
+        //6、setInterval() 定时器  设置多少秒重复执行这部分代码
+        // var num = 0;
+        // function count()
+        // {
+        //     document.write(num+"<br>");
+        //     num++;
+        // }
+        // setInterval("count()",1000);
+    </script>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            background:blue;
+            /* 相对于原来的位置动 */
+            position:relative;
+        }
+    </style>
+    <div class="box" id="box">
+        一个滑块
+    </div>
+    <input type="button" value="开始" onclick="start()">
+    <input type="button" value="停止" onclick="stop()">
+    <input type="button" value="反着走" onclick="reverse()">
+    <script>
+        //初始化位置默认为0
+        var position = 0;
+        function move()
+        {
+            var box = document.getElementById("box");
+            box.style.left = position+"px";
+            position+=1;
+        }
+        function move2(){
+            var box = document.getElementById("box");
+            box.style.left = position+"px";
+            //反着走，就是往左边 【减】
+            position-=1;
+        }
+        var setIn;
+        function reverse()
+        {
+            //同时开启多个定时器，点一次就执行一次，会多个定时器同时生效！！
+            setIn = setInterval("move2()",100);
+        }
+        var setIn2;
+        var animation;
+        function start()
+        {
+            // setIn2 = setInterval("move()",100);
+            // 相当于刷新页面（不是整个页面的刷新）
+            // 重复执行自己本身（这有一个递归效果）
+            animation = requestAnimationFrame(start);
+            // 执行移动方法
+            move();
+        }
+        function stop()
+        {
+            //清除定时器 =》一个页面是可以存在多个定时器，这时候呢需要告诉它清除的是【哪一个】
+            clearInterval(setIn);
+            // clearInterval(setIn2);
+            cancelAnimationFrame(animation);
+        }
+
+    </script>
+</body>
+</html>

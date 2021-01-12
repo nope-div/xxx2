@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <style>
+        img{
+            position: relative;
+            
+        }
+        .box{
+            width: 1px;
+            background: fuchsia;
+        }
+    </style>
+</head>
+<body>
+    <img src="./img/img/7.jpg" alt="">
+    <input type="button" value="动画开始" id="btn">
+    <input type="button" value="按钮" id="but">
+    <div class="box">1</div>
+    
+    <script> 
+        $("#btn").click(function(){
+            $("img").animate({
+                "width":"500px",
+                "height":"600px",
+                "opacity":0.8,
+                "position":"relative",
+                "left":"300px",
+                "top":"100px"
+
+            },1000)
+        });
+        $(".box").mouseover(function(){
+            $(this).animate({"width":"100px"},500);
+            $(this).animate({"height":"100px"},500);
+            $(this).animate({"width":"180px"},500);
+            $(this).animate({"height":"500px"},500);
+            $(this).animate({"width":"10px"},500);
+            $(this).animate({"height":"150px"},500);
+        });
+        $("#but").click(function(){
+            //第一个参数：停止动画；第二个参数立即完成动画
+            $(".box").stop(true,true);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>首页</li>
+        <li>游戏</li>
+        <li>娱乐</li>
+        <li>酒店</li>
+        <li>酒吧</li>
+        <li>旅游</li>
+    </ul>
+    <h1>我是标题1</h1>
+
+    <h2>我是标题2</h2>
+
+
+    <script>
+        $(function(){
+                    // 获取第一个元素
+            // $("ul li:first").css("color","red");
+            //或者：
+            $("ul li").first().css("color","blue");
+            //获取最后一个元素
+            $("ul li:last").css("font-weight","bold");
+            //或者：
+            $("ul li").last().css("color","red");
+            // 除某个选择器外的其他选择器
+            $("ul li:not(.title)").css("font-size","20px");
+            //获取索引为偶数的元素，索引从0开始
+            $("ul li:even").css("background","#ccc");
+            //获取索引为奇数的元素，索引从0开始
+            $("ul li:odd").css("background","yellow");
+            //获取索引值等于 index 的元素，索引号从 0 开始
+            $("ul li:nth(1)").css("text-align","center");
+            // 获取索引值大于 index 的元素，索引号从 0 开始，不包括指定索引值
+            $("ul li:gt(3)").css("color","orange");
+            // 获取索引值小于 index 的元素，索引号从 0 开始，不包括指定索引值
+            $("ul li:lt(3)").css("font-size","12px");
+            //获取所有标题元素(如果没有指定范围内的标题，则等同于*)
+            $(":header").css("font-weight","normal");
+
+            //内容过滤选择器
+            // $("a:contaion('百'）").css("text-decoration","none");
+
+            // $("div:empty").css({"width":"100px","height":"100px","background":"blue"});
+
+            //不可见元素
+        });
+    </script>
+    
+</body>
+</html>

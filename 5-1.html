@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+
+        //通过Image对象创建一个图片
+        var img =new Image();//相当于生成一个img标签
+        img.src="./5/images/ad1.jpg";
+        //在网页中显示图片
+        document.body.appendChild(img);
+
+
+
+        function getTime(){
+          //时钟功能
+         var date=new Date();
+        //获取小时
+        var hour=date.getHours();
+        //获取分钟
+        var minutes=check( date.getMinutes());
+
+        //获取秒数
+        var seconds=check(date.getSeconds()) ;
+
+        //获取年月日
+        var year=date.getFullYear();
+        var month=date.getMonth()+1;
+        var day=date.getDate();
+
+        //获取盒子
+        var box=document.getElementById("box");
+        box.innerHTML=hour+":"+minutes+":"+seconds+"<br>"+year+"年"+month+"月"+day+"日";
+
+        }
+        //格式化处理
+        function check(num)
+        {
+            if(num<10)
+            return "0"+num;
+            return num;
+        }
+       setInterval("getTime()",1000);
+
+        // var person=new Object();
+        // person.name="张三";
+        // person.age=20;
+        // person.sex='男';
+        // person.say=function(){
+        //     alert("它会说话");
+            
+        // }
+        // alert(person.name);
+        // person.say();
+
+
+
+        //2.date 日期对象
+        // var data=new Date();
+        // document.write("<br>"+data);
+        // //它的值叫做时间按戳
+        // document.write("<br>"+data.getTime());
+    </script>
+</body>
+</html>

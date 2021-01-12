@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+   
+</head>
+<style>
+     body{
+        font-size:14px;
+    }
+    dl{
+        height: 200px;
+        width: 400px;
+
+    }
+    dt{
+        float: left;
+        margin-right:20px;
+    }
+    dd{
+        line-height: 20px;
+    }
+</style>
+<script src="./JS专业课素材/第6章/实践案例2/frozen.jpg"></script>
+<script>
+    $(function(){
+        $("span").css("colo","red");
+        $("#score").css("color","orange");
+        $("a").css("text-decoration","none");
+        $("a.more").css("text-decoration","underline");
+    });
+</script>
+<body>
+    <dl id="movie">
+        <dt><img src="./JS专业课素材/第6章/实践案例2/frozen.jpg" width="150" height="200"></dt>
+        <dd><span>评分：</span><span id="score">8.4</span></dd>
+        <dd><span>别名：</span>冰雪大冒险/魔雪奇缘</dd>
+        <dd><span>演员：</span><a href="#">易迪娜.门泽尔</a></dd>
+        <dd><span>导演：</span><a href="#">克里斯.巴克 Jennifter Lee</a></dd>
+        <dd><span>地区：</span>美国</dd>
+        <dd><span>简介：</span>此处省略</dd>
+        <dd><a href="#" class="more">more</a></dd>
+    </dl>
+</body>
+</html>

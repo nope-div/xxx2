@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function leng(length,width,height){
+        //     var size=length*width*height;
+            
+        //     document.write("长度为8米，宽度为5米，高度为3米的教室总体积为："+size);
+        // }
+        // leng(8,5,3);
+      
+
+
+        // (function(length,width,height){
+        //     var area=length*width*height;
+        //     document.write("长度为8米，宽度为5米，高度为3米的教室总体积为："+area);
+        // })(8,5,3);
+    </script>
+</head>
+<body>
+    <script>
+        function calc(){
+            var num1=document.getElementById("op1").value;
+            var num2=document.getElementById("op2").value;
+            var operator=document.getElementById("op").value;
+            if(num1.trim() !=""&&NUM2.trim()!=""){
+                if(!isNaN(num1)&&!isNaN(num2)){
+                    document.getElementById("result").value
+                    =eval(num1+operator+num2)
+                }
+                else{
+                    alert("请输入两个操作数")
+                }
+            }
+        }
+    </script>
+    <input type="text" id="op1"/>
+    <select  id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="op2"/>=<input type="text" id="result"/>
+    <input type="button" id="btn" value="计算" onclick="calc()"/>
+</body>
+</html>

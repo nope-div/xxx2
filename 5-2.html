@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //返回绝对值
+        document.write(Math.abs(-1)+"<br>");
+        //向上取整  ceil=》天花板
+        document.write(Math.ceil(60.11111)+"<br>");
+        //向下取整   floor=》地板，层
+        document.write(Math.floor(60.999999)+"<br>");
+        //最大值比较
+        document.write(Math.max(66,77)+"<br>");
+        //最小值比较
+        document.write(Math.min(60,33)+"<br>");
+        //x的y次方
+        document.write(Math.pow(5,10)+"<br>");
+        //随机数=》重点记！0-1取值
+        document.write(Math.random()+"<br>");
+        //返回接近number的整数   就是四舍五入
+        document.write(Math.round(58.3336)+"<br>");
+        //平方根
+        document.write(Math.sqrt(10)+"<br>");
+
+
+
+        //数组的声明
+        var arr=[1,323,34,45,"66",34.3];
+        //取值通过数组下标取值
+        document.write(arr[2]);
+
+        //数组里面存储数组（二维数组）
+        // var arr2=[];
+        // arr2[0]=[1,2,3];
+        // document.write(arr[0][0]);
+
+        //数组的下表可以替换成字符串
+        // var arr3=[];
+        // arr3["小吃"]=["中敬拜","赵婧并"];
+        // arr3["傻子"]=["敬拜","婧并"];
+        // document.write(arr3["小吃"][1]+"<br>");
+        // document.write(arr3["傻子"][0]);
+
+
+        //通过Array数组对象创建数组
+        // var arr4=new Array(1,2,3,4);
+        // document.write(arr4[0]);
+
+        var str="Hello World!";
+        //charAt(); 查找字符串在的位置返回
+        document.write("<br>"+str.charAt(0));
+        //查找某个单词在字符串首次出现的位置，如果找不到就返回-1
+        var emil="xxxqq@.com";
+        document.write("<br>"+emil.indexOf("@"));
+        //截取指定位置后的字符串长度返回
+        var str2="Hello!";
+        document.write("<br>"+str2.substr(0,3));
+        //获取字符串长度
+        document.write("<br>当前字符串的长度为："+str2.length);
+        
+
+    </script>
+</body>
+</html>

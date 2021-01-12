@@ -1,0 +1,58 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 时间盒子 -->
+        <div id="box"></div>
+        <input type="button" value="展示当前时间" onclick="showTime()">
+        <script>
+            //with语句使用
+            function showTime()
+            {
+          //时钟功能
+         var date=new Date();
+         with(date){
+             //获取小时
+        var hour=getHours();
+        //获取分钟
+        var minutes=getMinutes();
+
+        //获取秒数
+        var seconds=getSeconds() ;
+        
+         }
+        // //获取小时
+        // var hour=date.getHours();
+        // //获取分钟
+        // var minutes=date.getMinutes();
+
+        // //获取秒数
+        // var seconds=date.getSeconds() ;
+        
+        //获取盒子
+        var box=document.getElementById("box");
+        box.innerHTML=hour+":"+minutes+":"+seconds;
+            }
+            // //function创建一个类
+            // function Person(name,ahe,sex){
+            //     this.name=name;
+            //     this.age=age;
+            //     this.sex=sex;
+
+            //     //方法定义
+            //     this.say=function(){
+            //         alert("hello worlod!");
+            //     }
+            // }
+
+            // //实例化一个类
+            // var p=new Person("李四",18,"女");
+            // document.write(p.name);
+            // p.say();
+        </script>
+    </body>
+    </html>

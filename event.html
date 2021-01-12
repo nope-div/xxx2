@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件</title>
+    <style>
+        .box{
+            width:100px;
+            height: 100px;
+            background: #ccc;
+        }
+    </style>
+
+    <script>
+        // 4、window.onload叫加载事件，加载完全部HTML之后，再执行这部分代码
+        window.onload = function(){
+            // 这个bug是因为代码从上到下执行，没有发现这个btn元素（这个标签）
+            var btn = document.getElementById("btn");
+            // alert(btn.value);
+        }
+    </script>
+
+</head>
+<body>
+    
+    <!-- 5、失去焦点事件 =》 用于表单输入 -->
+    <input type="text" name="" id="" onblur="getValue(this)">
+    <script>
+        // 可以通过失去焦点判断值是否输入
+        function getValue(obj)
+        {
+            if(obj.value.length < 1)
+            {
+                alert("请输入值！");
+            }
+        }
+    </script>
+    <!-- 6、改变事件，它是拿下一个值和上一个值比较判断是否变化 -->
+    <select name="" id="" onchange="getValues(this)">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <script>
+        function getValues(obj)
+        {
+            alert("值改变了"+obj.value);
+        }
+    </script>
+    <br>
+    <!-- 7、提交事件 onsubmit事件 -->
+    <form action="http://www.baidu.com" onsubmit="return checkForm()">
+        <input type="text" name="user" id="user"><br>
+        <input type="submit" value="提交表单">
+    </form>
+    <script>
+        // 表单数据验证
+        function checkForm()
+        {
+            var user = document.getElementById("user").value;
+            if(user.length < 1)
+            {
+                alert("请输入正确的值！");
+                // 如果没有输入值，不要急着跳转，而是等待输入值
+                // event.returnValue = false;
+                // 也可以这样写
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+    <br>
+
+    <input type="button" value="按钮" id="btn">
+
+
+    <!-- 1、点击事件 =》点击某个元素时触发一个事件 -->
+    <!-- 标签内的this代表的是获取这个标签元素 -->
+    <input type="radio" name="" id="" value="男" onclick="getSex(this)">男
+    <input type="radio" name="" id="" value="女" onclick="getSex(this)">女
+
+    <script>
+        // object => obj缩写
+        function getSex(obj)
+        {
+            alert(obj.value);
+        }
+    </script>
+
+    <!-- 2、移入移出事件 =》 鼠标移进去触发一个事件；移出触发一个事件 -->
+    <img src="./img/1.jpg" alt="" onmouseover="moveIn()" onmouseout="moveOut()">
+    <script>
+        function moveIn()
+        {
+            // alert("鼠标移入！");
+        }
+        function moveOut()
+        {
+            // alert("鼠标移出");
+        }
+    </script>
+    <!-- 3、鼠标移动事件  -->
+    <p>移动了<span id="num">0</span>像素</p>
+    <div class="box" onmousemove="getPix()">
+        
+    </div>
+    <script>
+        var num = 0;
+        function getPix()
+        {
+            num++;
+            //给标签替换文本：innerText
+            document.getElementById("num").innerText = num;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--viewport=视口（设置网页的展示区域）-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*{
+    margin:0;
+    padding: 0;
+}
+a{
+    /*去下滑线*/
+    text-decoration: none;
+    color: orangered;
+}
+.headerBox{
+    background: palegreen;
+    height: 60px;
+    line-height: 60px;
+    color: #ffffff;
+}
+.nav{
+    height: 30px;
+    line-height: 30px;
+    background: #949696;
+}
+.nav ul li{
+    float: left;
+    /*小黑点去除*/
+    list-style: none;
+    width: 20%;
+    /*文字居中*/
+    text-align: center;
+}
+/*min-宽度 min-高度     （当前浏览器的宽度【大于】最小宽度，就会显示对应的样式）
+max-宽度 max-高度   （当前浏览器的宽度【小于】max-宽度，就会显示它对应的样式）
+
+*/
+/*@media all and (max-width: 768px){
+    .nav{
+        background: chartreuse;
+    }
+}*/
+
+/*iphone/Android 浏览时一般宽度：320-480*/
+/*
+@media all and (max-width: 480px),all and(max-width:320px){
+    .nav{
+        background: chocolate;
+    }
+}*/
+/*老手机：280px宽度*/
+
+
+
+
+
+
+
+
+    </style>
+        <link rel="stylesheet" media="all and (max-width:768px)" href="./css/ipad.css">
+        <link rel="stylesheet" media="all and (max-width:480px)" href="./css/phone.css">
+        <link rel="stylesheet" media="all and (max-width:280px)" href="./css/old.css">
+</head>
+<body>
+
+    
+    <!--我们的视口使用-->
+    <div class="headerBox">
+        <h1>购乐乐后台管理</h1>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="">订单管理</a></li>
+            <li><a href="">物流管理</a></li>
+            <li><a href="">系统管理</a></li>
+        </ul>
+    </div>
+</body>
+</html>
